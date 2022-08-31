@@ -1,6 +1,37 @@
 @extends('backend/template/template')
 @section('content')
-    
+
+<div class="br-pagetitle">
+  <i class="icon ion-ios-home-outline"></i>
+  <div>
+    <h4>Dashboard</h4>
+    <p class="mg-b-0">Do bigger things with Bracket plus, the responsive bootstrap 4 admin template.</p>
+  </div>
+</div>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mt-3">
+      <h4>Quick Access</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-1">
+     <a href="{{route('slider.add')}} " class="btn btn-primary btn-sm">Add Slider</a>
+    </div>
+    <div class="col-md-1">
+    <a href="{{route('slider.show')}} " class="btn btn-warning btn-sm">Manage Slider</a>
+    </div>
+    <div class="col-md-2">
+      
+    </div>
+
+  </div>
+</div>
+
 
     <div class="br-pagebody">
         <div class="row row-sm">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Backend\Slider;
+use App\Models\Backend\Multi;
 use Image;
 use File;
 
@@ -83,6 +84,9 @@ class SliderController extends Controller
     }
     public function delete($id){
         $slider = Slider::find($id);
+        if (File::exists('backend/slider/'.$slider->image)) {
+            File::delete('backend/slider/'.$slider->image);
+        }
         $slider->delete();
         return redirect()->route('slider.show');
     }
@@ -93,24 +97,63 @@ class SliderController extends Controller
     public function update(Request $request,$id){
         $slider = Slider::find($id);
         if ($request->image) {
-            $images = $request->file('image');
-            $customName = rand().".".$images->getClientOriginalExtension();
-            $location = public_path('backend/slider/'.$customName);
-            Image::make($images)->save($location);
+            if (File::exists('backend/slider/'.$slider->image)) {
+                File::delete('backend/slider/'.$slider->image); 
+                $images = $request->file('image');
+                $customName = rand().".".$images->getClientOriginalExtension();
+                $location = public_path('backend/slider/'.$customName);
+                Image::make($images)->save($location);
+                $slider->image =$customName ;
+            }
+           
            
         }
-
-            $slider = new Slider;
             $slider->title = $request->title;
             $slider->cat = $request->cat;
             $slider->description = $request->description;
             $slider->link = $request->link;
             $slider->status = $request->status;
-            $slider->image = $customName;
             $slider->update();
+          
+            
+             
             return redirect()->route('slider.show');
     }
 
+    public function multiAdd(){
+        $slider = Slider::all();
+        return view('backend/pages/slider/multi',compact('slider'));
+    }
 
+    public function multiStore(Request $request){
+        if ($request->pics) {
+            foreach ($request->file('pics') as $images) {
+                $customName = rand().".".$images->getClientOriginalExtension();
+                $location = public_path('backend/slider/images/'.$customName);
+                Image::make($images)->save($location);
+
+                $multi = new Multi();
+                $multi->s_id = $request->s_id;
+                $multi->image = $customName;
+                $multi->save();
+
+            }
+        }
+        return redirect()->route('slider.multi');
+    }
+
+    public function view($id){
+        $slider = Slider::find($id);
+        $multi = Multi::where('s_id',$id)->get();
+        return view('backend/pages/slider/view',compact('slider'),compact('multi'));
+    }
+    public function deleteMultiimage($id){
+        $multi = Multi::find($id);
+        if (File::exists('backend/slider/images/'.$multi->image)) {
+            File::delete('backend/slider/images/'.$multi->image);
+        }
+        $multi->delete();
+        return back();
+    }
 }
 

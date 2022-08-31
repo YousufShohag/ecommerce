@@ -1,6 +1,15 @@
 @extends('backend/template/template')
 @section('content')
 
+<div class="br-pagetitle">
+    <i class="icon ion-ios-home-outline"></i>
+    <div>
+      <h4>Dashboard||Add Your Slider</h4>
+      <p class="mg-b-0 " style="color: red;">You must fill all field ,remember if you dont any one field slider are not added.</p>
+    </div>
+  </div>
+
+
 
 <div class="container">
     <div class="row">
@@ -21,7 +30,7 @@
                     <button type="" class="btn btn-success mt-3 form-control">Save</button>
                 </form>
             </div>
-            <a href="{{route('slider.show')}}" class="btn btn-primary form-control">Show Slider</a>
+            {{-- <a href="{{route('slider.show')}}" class="btn btn-primary form-control">Show Slider</a> --}}
         </div>
     </div>
 </div>

@@ -29,8 +29,14 @@ Route::group(['prefix' => '/slider'],function(){
     Route::get('/addSlider',[SliderController::class,'add'])->name('slider.add');
     Route::POST('/storeSlider',[SliderController::class,'store'])->name('slider.store');
     Route::get('/showSlider',[SliderController::class,'show'])->name('slider.show');
+    Route::get('/view/{id}',[SliderController::class,'view'])->name('slider.view');
     Route::get('/status/{id}',[SliderController::class,'status'])->name('slider.status');
     Route::get('/delete/{id}',[SliderController::class,'delete'])->name('slider.delete');
     Route::get('/edit/{id}',[SliderController::class,'edit'])->name('slider.edit');
     Route::POST('/update/{id}',[SliderController::class,'update'])->name('slider.update');
+    Route::get('/deleteMultiimage/{id}',[SliderController::class,'deleteMultiimage'])->name('multiImage.delete');
+
+    Route::get('/multi}',[SliderController::class,'multiAdd'])->name('slider.multi');
+    Route::POST('/multiStore}',[SliderController::class,'multiStore'])->name('multi.store');
+    
 });
