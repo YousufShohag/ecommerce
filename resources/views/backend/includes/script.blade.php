@@ -20,7 +20,15 @@
 <script src="{{asset('backend')}}/js/map.shiftworker.js"></script>
 <script src="{{asset('backend')}}/js/ResizeSensor.js"></script>
 <script src="{{asset('backend')}}/js/dashboard.js"></script>
-<script>
+<script src="{{asset('backend')}}/js/custom.js"></script>
+<script src="{{asset('backend')}}/js/subcategory.js"></script>
+<script src="{{asset('backend')}}/js/cupon.js"></script>
+<script src="{{asset('backend')}}/js/product.js"></script>
+
+  <script src="{{asset('backend')}}/js/category.js"></script>
+  <script src="https://cdn.ckeditor.com/ckeditor5/35.1.0/classic/ckeditor.js"></script>
+
+  <script>
   $(function(){
     'use strict'
 
@@ -47,4 +55,18 @@
       }
     }
   });
+
+
+
+
+
+  
+</script>
+
+<script>
+  ClassicEditor
+      .create( document.querySelector( '.des' ) )
+      .catch( error => {
+          console.error( error );
+      } );
 </script>

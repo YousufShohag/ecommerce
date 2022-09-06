@@ -4,7 +4,7 @@
 <div class="br-pagetitle">
   <i class="icon ion-ios-home-outline"></i>
   <div>
-    <h4>Dashboard</h4>
+    <h4>ড্যাশবোর্ড</h4>
     <p class="mg-b-0">Do bigger things with Bracket plus, the responsive bootstrap 4 admin template.</p>
   </div>
 </div>
@@ -16,19 +16,35 @@
   <div class="row">
     <div class="col-md-12 mt-3">
       <h4>Quick Access</h4>
+      <h4>আমি বিশ্বাস করি , আমরা সবকিছুই পারব </h4>
     </div>
   </div>
   <div class="row">
     <div class="col-md-1">
-     <a href="{{route('slider.add')}} " class="btn btn-primary btn-sm">Add Slider</a>
+      <a href="{{route('vendor.add')}} " class="btn btn-primary btn-sm ">Add Vendor</a>
+     </div>
+     <div class="col-md-1">
+      <a href="{{route('vendor.manage')}} " class="btn btn-warning btn-sm">Manage Vendor</a>
+     </div>
+
+    <div class="col-md-1">
+     <a href="{{route('slider.add')}} " class="btn btn-primary btn-sm ml-3">Add Slider</a>
     </div>
     <div class="col-md-1">
-    <a href="{{route('slider.show')}} " class="btn btn-warning btn-sm">Manage Slider</a>
+    <a href="{{route('slider.show')}} " class="btn btn-warning btn-sm ml-2">Manage Slider</a>
     </div>
-    <div class="col-md-2">
-      
+    <div class="col-md-1 ml-4">
+      <a href="{{route('category.add')}} " class="btn btn-primary btn-sm">Category</a>
     </div>
-
+    <div class="col-md-1 ">
+      <a href="{{route('subcategoryview')}} " class="btn btn-warning btn-sm">Sub-Category</a>
+    </div>
+    <div class="col-md-1 ">
+      <a href="{{route('productview')}} " class="btn btn-primary btn-sm ml-4">Product</a>
+    </div>
+    <div class="col-md-1 ">
+      <a href="{{route('add')}} " class="btn btn-warning btn-sm ml-2">Product Cupon</a>
+    </div>
   </div>
 </div>
 
@@ -40,9 +56,9 @@
               <div class="pd-x-20 pd-t-20 d-flex align-items-center">
                 <i class="ion ion-earth tx-60 lh-0 tx-white op-7"></i>
                 <div class="mg-l-20">
-                  <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Today's Visits</p>
-                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">1,975,224</p>
-                  <span class="tx-11 tx-roboto tx-white-8">24% higher yesterday</span>
+                  <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Total Vendor</p>
+                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">{{$vendor }}</p>
+                  <span class="tx-11 tx-roboto tx-white-8"></span>
                 </div>
               </div>
               <div id="ch1" class="ht-50 tr-y-1"></div>

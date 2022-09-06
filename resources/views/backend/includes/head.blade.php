@@ -25,8 +25,9 @@
 <!-- Meta -->
 <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
 <meta name="author" content="ThemePixels">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
-<title>Bracket Plus Responsive Bootstrap 4 Admin Template</title>
+<title>uTime||Team</title>
 
 <!-- vendor css -->
 <link href="{{asset('backend')}}/lib/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
