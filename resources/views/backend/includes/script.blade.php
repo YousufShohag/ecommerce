@@ -24,6 +24,7 @@
 <script src="{{asset('backend')}}/js/subcategory.js"></script>
 <script src="{{asset('backend')}}/js/cupon.js"></script>
 <script src="{{asset('backend')}}/js/product.js"></script>
+<script src="{{asset('backend')}}/js/AddToCart.js"></script>
 
   <script src="{{asset('backend')}}/js/category.js"></script>
   <script src="https://cdn.ckeditor.com/ckeditor5/35.1.0/classic/ckeditor.js"></script>

@@ -42,15 +42,15 @@
   </head>
 
   <body>
-
-    <div class="d-flex align-items-center justify-content-center ht-100v">
+  
+    <div class="d-flex align-items-center justify-content-center ht-100v ">
 
       <div class="login-wrapper wd-300 wd-xs-400 pd-25 pd-xs-40 bg-br-primary bd bd-white-1 rounded">
-        <div class="signin-logo tx-center tx-28 tx-bold tx-white"><span class="tx-normal">[</span> bracket <span class="tx-info">plus</span> <span class="tx-normal">]</span></div>
+        <div class="mt-5 signin-logo tx-center tx-28 tx-bold tx-white" ><span class="tx-normal">[</span> DEMO <span class="tx-info">plus</span> <span class="tx-normal">]</span></div>
         <div class="tx-center mg-b-40">The Admin Template For Perfectionist</div>
 
 <!-- Validation Errors -->
-<x-auth-validation-errors class="mb-4" :errors="$errors" />
+<x-auth-validation-errors class="" :errors="$errors" />
 
 <form method="POST" action="{{ route('register') }}">
     @csrf
@@ -86,10 +86,10 @@
         
     </div>
     <!-- phone -->
-    <div class="mt-4">
+    {{-- <div class="mt-4">
         <x-label for="image" :value="__('')" />
         <x-input id="image" class="form-control" type="file" name="image" />
-    </div>
+    </div> --}}
     <!-- Password -->
     <div class="mt-4">
         <x-label for="password" :value="__('Password')" />

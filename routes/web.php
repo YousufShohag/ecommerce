@@ -1,5 +1,17 @@
 <?php
+    // =======================
+    // =======================
+    //    FORNTEND CONNECTION
+    // =======================
+    // =======================
+use App\Http\Controllers\Frontend\homeController;
 
+
+    // =======================
+    // =======================
+    //    BACKEND CONNECTION
+    // =======================
+    // =======================
 use Illuminate\Support\Facades\Route;
 // RUHUL VAI
 use App\Http\Controllers\Backend\VendorController;
@@ -10,6 +22,8 @@ use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductGalleryController;
+
+use App\Http\Controllers\Frontend\AddToCartController;
 
 // ASRAF 
 use App\Http\Controllers\Backend\SubCategoryController;
@@ -29,15 +43,31 @@ use App\Http\Controllers\Backend\CuponController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// ===================================
+// ====== ROUTE FOR FRONTEND    ==========
+// ===================================
+
+
+Route::get('/',[homeController::class,'index'])->name('index');
+
+//Add To Carts Route
+Route::get('/addtocart/{id}',[AddToCartController::class,'addtocart']);
+Route::get('/showcart',[AddToCartController::class,'showcart']);
+Route::get('/removecart/{id}',[AddToCartController::class,'removecart']);
+
+Route::get('/viewCart',[AddToCartController::class,'viewCart'])->name('viewCart');
 
 
 
 
 
 
+
+
+
+// ===================================
+// ====== ROUTE FOR BACKEND ==========
+// ===================================
 Route::get('/dashboard',[DashboardController::class,'dashboard'])->middleware(['auth','verified'])->name('dashboard');
 
 // Route::get('/dashboard', function () {

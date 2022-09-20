@@ -1,9 +1,26 @@
 @extends('backend/template/template')
 @section('content')
 
+<div class="br-pagetitle">
+  <i class="icon ion-ios-home-outline"></i>
+  <div>
+    <h4>Dashboard||This is Product</h4>
+    {{-- <h5>Make By: Asraf</h5> --}}
+    <p class="mg-b-0">Do bigger things with uTEAM, the responsive bootstrap 4 admin template.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <a href="{{route('productview')}}" class="btn btn-primary">Add New Product</a>
+    </div>
+  </div>
+</div>
+
 
  <div class="contaier">
-       <div class="col-md-12">
+       <div class="col-md-12 mt-5">
 
         <div class="msg">
             
